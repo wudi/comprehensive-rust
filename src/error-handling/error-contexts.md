@@ -1,8 +1,8 @@
 # Adding Context to Errors
 
 The widely used [anyhow](https://docs.rs/anyhow/) crate can help you add
-contextual information to your errors and allows you to have fewer
-custom error types:
+contextual information to your errors and allows you to have fewer custom error
+types:
 
 ```rust,editable,compile_fail
 use std::{fs, io};
@@ -32,11 +32,13 @@ fn main() {
 
 <details>
 
-* `anyhow::Result<V>` is a type alias for `Result<V, anyhow::Error>`.
-* `anyhow::Error` is essentially a wrapper around `Box<dyn Error>`. As such it's again generally not
-  a good choice for the public API of a library, but is widely used in applications.
-* Actual error type inside of it can be extracted for examination if necessary.
-* Functionality provided by `anyhow::Result<T>` may be familiar to Go developers, as it provides
-  similar usage patterns and ergonomics to `(T, error)` from Go.
+- `anyhow::Result<V>` is a type alias for `Result<V, anyhow::Error>`.
+- `anyhow::Error` is essentially a wrapper around `Box<dyn Error>`. As such it's
+  again generally not a good choice for the public API of a library, but is
+  widely used in applications.
+- Actual error type inside of it can be extracted for examination if necessary.
+- Functionality provided by `anyhow::Result<T>` may be familiar to Go
+  developers, as it provides similar usage patterns and ergonomics to
+  `(T, error)` from Go.
 
 </details>

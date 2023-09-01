@@ -1,6 +1,7 @@
 # The `Drop` Trait
 
-Values which implement [`Drop`][1] can specify code to run when they go out of scope:
+Values which implement [`Drop`][1] can specify code to run when they go out of
+scope:
 
 ```rust,editable
 struct Droppable {
@@ -33,11 +34,10 @@ fn main() {
 
 Discussion points:
 
-* Why doesn't `Drop::drop` take `self`?
-    * Short-answer: If it did, `std::mem::drop` would be called at the end of
-        the block, resulting in another call to `Drop::drop`, and a stack
-        overflow!
-* Try replacing `drop(a)` with `a.drop()`.
+- Why doesn't `Drop::drop` take `self`?
+  - Short-answer: If it did, `std::mem::drop` would be called at the end of the
+    block, resulting in another call to `Drop::drop`, and a stack overflow!
+- Try replacing `drop(a)` with `a.drop()`.
 
 </details>
 

@@ -1,6 +1,7 @@
 # `while` loops
 
-The [`while` keyword](https://doc.rust-lang.org/reference/expressions/loop-expr.html#predicate-loops)
+The
+[`while` keyword](https://doc.rust-lang.org/reference/expressions/loop-expr.html#predicate-loops)
 works very similar to other languages:
 
 ```rust,editable
@@ -16,4 +17,3 @@ fn main() {
     println!("Final x: {x}");
 }
 ```
-

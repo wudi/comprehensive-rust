@@ -1,6 +1,7 @@
 # Converting Error Types
 
-The effective expansion of `?` is a little more complicated than previously indicated:
+The effective expansion of `?` is a little more complicated than previously
+indicated:
 
 ```rust,ignore
 expression?

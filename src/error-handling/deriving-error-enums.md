@@ -36,9 +36,9 @@ fn main() {
 
 <details>
 
-`thiserror`'s derive macro automatically implements `std::error::Error`, and optionally `Display`
-(if the `#[error(...)]` attributes are provided) and `From` (if the `#[from]` attribute is added).
-It also works for structs.
+`thiserror`'s derive macro automatically implements `std::error::Error`, and
+optionally `Display` (if the `#[error(...)]` attributes are provided) and `From`
+(if the `#[from]` attribute is added). It also works for structs.
 
 It doesn't affect your public API, which makes it good for libraries.
 

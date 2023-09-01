@@ -2,7 +2,8 @@
 
 We will design a classical GUI library using traits and trait objects.
 
-We will also look at enum dispatch with an exercise involving points and polygons.
+We will also look at enum dispatch with an exercise involving points and
+polygons.
 
 <details>
 

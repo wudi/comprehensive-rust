@@ -2,9 +2,9 @@
 
 We will look at implementing methods in two contexts:
 
-* Storing books and querying the collection
+- Storing books and querying the collection
 
-* Keeping track of health statistics for patients
+- Keeping track of health statistics for patients
 
 <details>
 

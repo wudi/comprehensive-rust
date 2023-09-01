@@ -2,9 +2,9 @@
 
 We will look at two things:
 
-* The Luhn algorithm,
+- The Luhn algorithm,
 
-* An exercise on pattern matching.
+- An exercise on pattern matching.
 
 <details>
 

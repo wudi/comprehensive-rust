@@ -1,7 +1,8 @@
 # Dynamic Error Types
 
-Sometimes we want to allow any type of error to be returned without writing our own enum covering
-all the different possibilities. `std::error::Error` makes this easy.
+Sometimes we want to allow any type of error to be returned without writing our
+own enum covering all the different possibilities. `std::error::Error` makes
+this easy.
 
 ```rust,editable,compile_fail
 use std::fs;
@@ -33,9 +34,9 @@ fn main() {
 
 <details>
 
-This saves on code, but gives up the ability to cleanly handle different error cases differently in
-the program. As such it's generally not a good idea to use `Box<dyn Error>` in the public API of a
-library, but it can be a good option in a program where you just want to display the error message
-somewhere.
+This saves on code, but gives up the ability to cleanly handle different error
+cases differently in the program. As such it's generally not a good idea to use
+`Box<dyn Error>` in the public API of a library, but it can be a good option in
+a program where you just want to display the error message somewhere.
 
 </details>

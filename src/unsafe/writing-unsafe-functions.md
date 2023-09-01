@@ -1,7 +1,7 @@
 # Writing Unsafe Functions
 
-You can mark your own functions as `unsafe` if they require particular conditions to avoid undefined
-behaviour.
+You can mark your own functions as `unsafe` if they require particular
+conditions to avoid undefined behaviour.
 
 ```rust,editable
 /// Swaps the values pointed to by the given pointers.
@@ -30,9 +30,11 @@ fn main() {
 
 <details>
 
-We wouldn't actually use pointers for this because it can be done safely with references.
+We wouldn't actually use pointers for this because it can be done safely with
+references.
 
-Note that unsafe code is allowed within an unsafe function without an `unsafe` block. We can
-prohibit this with `#[deny(unsafe_op_in_unsafe_fn)]`. Try adding it and see what happens.
+Note that unsafe code is allowed within an unsafe function without an `unsafe`
+block. We can prohibit this with `#[deny(unsafe_op_in_unsafe_fn)]`. Try adding
+it and see what happens.
 
 </details>

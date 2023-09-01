@@ -1,7 +1,9 @@
 # Summary
 
 <!-- Keep first page as index.md to avoid giving it two names. -->
+
 [Welcome to Comprehensive Rust 🦀](index.md)
+
 - [Running the Course](running-the-course.md)
   - [Course Structure](running-the-course/course-structure.md)
   - [Keyboard Shortcuts](running-the-course/keyboard-shortcuts.md)
@@ -11,10 +13,9 @@
   - [Code Samples](cargo/code-samples.md)
   - [Running Cargo Locally](cargo/running-locally.md)
 
-
 # Day 1: Morning
 
-----
+---
 
 - [Welcome](welcome-day-1.md)
   - [What is Rust?](welcome-day-1/what-is-rust.md)
@@ -74,7 +75,7 @@
 
 # Day 2: Morning
 
-----
+---
 
 - [Welcome](welcome-day-2.md)
 
@@ -126,10 +127,9 @@
   - [Iterators and Ownership](exercises/day-2/iterators-and-ownership.md)
   - [Strings and Iterators](exercises/day-2/strings-iterators.md)
 
-
 # Day 3: Morning
 
-----
+---
 
 - [Welcome](welcome-day-3.md)
 - [Generics](generics.md)
@@ -184,10 +184,9 @@
 - [Exercises](exercises/day-3/afternoon.md)
   - [Safe FFI Wrapper](exercises/day-3/safe-ffi-wrapper.md)
 
-
 # Android
 
-----
+---
 
 - [Welcome](android.md)
 - [Setup](android/setup.md)
@@ -210,10 +209,9 @@
   - [With Java](android/interoperability/java.md)
 - [Exercises](exercises/android/morning.md)
 
-
 # Bare Metal: Morning
 
-----
+---
 
 - [Welcome](bare-metal.md)
 - [no_std](bare-metal/no_std.md)
@@ -260,10 +258,9 @@
 - [Exercises](exercises/bare-metal/afternoon.md)
   - [RTC Driver](exercises/bare-metal/rtc.md)
 
-
 # Concurrency: Morning
 
-----
+---
 
 - [Welcome](concurrency.md)
 - [Threads](concurrency/threads.md)
@@ -304,19 +301,17 @@
   - [Dining Philosophers](exercises/concurrency/dining-philosophers-async.md)
   - [Broadcast Chat Application](exercises/concurrency/chat-app.md)
 
-
 # Final Words
 
-----
+---
 
 - [Thanks!](thanks.md)
 - [Other Resources](other-resources.md)
 - [Credits](credits.md)
 
-
 # Solutions
 
-----
+---
 
 - [Solutions](exercises/solutions.md)
   - [Day 1 Morning](exercises/day-1/solutions-morning.md)

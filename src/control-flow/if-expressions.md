@@ -1,7 +1,7 @@
 # `if` expressions
 
-You use [`if`
-expressions](https://doc.rust-lang.org/reference/expressions/if-expr.html#if-expressions)
+You use
+[`if` expressions](https://doc.rust-lang.org/reference/expressions/if-expr.html#if-expressions)
 exactly like `if` statements in other languages:
 
 ```rust,editable
@@ -18,7 +18,6 @@ fn main() {
 In addition, you can use `if` as an expression. The last expression of each
 block becomes the value of the `if` expression:
 
-
 ```rust,editable
 fn main() {
     let mut x = 10;
@@ -32,6 +31,8 @@ fn main() {
 
 <details>
 
-Because `if` is an expression and must have a particular type, both of its branch blocks must have the same type. Consider showing what happens if you add `;` after `x / 2` in the second example.
-    
+Because `if` is an expression and must have a particular type, both of its
+branch blocks must have the same type. Consider showing what happens if you add
+`;` after `x / 2` in the second example.
+
 </details>

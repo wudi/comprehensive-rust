@@ -15,18 +15,19 @@ See the [CXX tutorial][2] for an full example of using this.
 
 - Walk the students through the tutorial step by step.
 
-- Highlight how CXX presents a clean interface without unsafe code in _both languages_.
+- Highlight how CXX presents a clean interface without unsafe code in _both
+  languages_.
 
-- Show the correspondence between [Rust and C++ types](https://cxx.rs/bindings.html):
+- Show the correspondence between
+  [Rust and C++ types](https://cxx.rs/bindings.html):
 
-    - Explain how a Rust `String` cannot map to a C++ `std::string`
-      (the latter does not uphold the UTF-8 invariant). Show that
-      despite being different types, `rust::String` in C++ can be
-      easily constructed from a C++ `std::string`, making it very
-      ergonomic to use.
+  - Explain how a Rust `String` cannot map to a C++ `std::string` (the latter
+    does not uphold the UTF-8 invariant). Show that despite being different
+    types, `rust::String` in C++ can be easily constructed from a C++
+    `std::string`, making it very ergonomic to use.
 
-    - Explain that a Rust function returning `Result<T, E>` becomes a
-      function which throws a `E` exception in C++ (and vice versa).
+  - Explain that a Rust function returning `Result<T, E>` becomes a function
+    which throws a `E` exception in C++ (and vice versa).
 
 </details>
 
