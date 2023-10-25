@@ -1,4 +1,4 @@
-# `break` and `continue`
+# `break` & `continue`
 
 - If you want to exit a loop early, use [`break`](https://doc.rust-lang.org/reference/expressions/loop-expr.html#break-expressions),
 - If you want to immediately start
