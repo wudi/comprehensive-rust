@@ -4990,7 +4990,7 @@ msgstr ""
 
 #: src/pattern-matching.md:21
 msgid "The `_` pattern is a wildcard pattern which matches any value."
-msgstr "模式 `_` 是外卡 (wildcard) 模式。它可以匹配任何值。"
+msgstr "模式 `_` 是通配 (wildcard) 模式。它可以匹配任何值。"
 
 #: src/pattern-matching.md:26
 #, fuzzy
