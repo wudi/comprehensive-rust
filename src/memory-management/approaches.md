@@ -14,7 +14,7 @@ Traditionally, languages have fallen into two broad categories:
   Haskell, ...
   - A runtime system ensures that memory is not freed until it can no longer be
     referenced.
-  - Typically implemented with reference counting, garbage collection, or RAII.
+  - Typically implemented with reference counting or garbage collection.
 
 Rust offers a new mix:
 
@@ -46,7 +46,7 @@ Rust's ownership and borrowing model can, in many cases, get the performance of
 C, with alloc and free operations precisely where they are required -- zero
 cost. It also provides tools similar to C++'s smart pointers. When required,
 other options such as reference counting are available, and there are even
-third-party crates available to support runtime garbage collection (not covered
-in this class).
+crates available to support runtime garbage collection (not covered in this
+class).
 
 </details>

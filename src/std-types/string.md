@@ -1,10 +1,10 @@
 ---
-minutes: 10
+minutes: 5
 ---
 
 # String
 
-[`String`][1] is the standard heap-allocated growable UTF-8 string buffer:
+[`String`][1] is a growable UTF-8 encoded string:
 
 ```rust,editable
 fn main() {
@@ -54,5 +54,10 @@ all `str` methods on a `String`.
     out-of-bounds.
   - To a substring by using `s3[0..4]`, where that slice is on character
     boundaries or not.
+- Many types can be converted to a string with the
+  [`to_string`](https://doc.rust-lang.org/std/string/trait.ToString.html#tymethod.to_string)
+  method. This trait is automatically implemented for all types that implement
+  `Display`, so anything that can be formatted can also be converted to a
+  string.
 
 </details>

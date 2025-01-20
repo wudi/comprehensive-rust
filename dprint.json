@@ -9,11 +9,8 @@
       "command": "yapf3",
       "exts": ["py"]
     }, {
-      "command": "rustfmt --edition 2021",
+      "command": "rustup run stable rustfmt --edition 2021",
       "exts": ["rs"]
-    }, {
-      "command": "msgcat -",
-      "exts": ["po"]
     }]
   },
   "excludes": [

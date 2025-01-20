@@ -1,13 +1,12 @@
 ---
-minutes: 10
+minutes: 5
 ---
 
 # Result
 
 `Result` is similar to `Option`, but indicates the success or failure of an
-operation, each with a different type. This is similar to the `Res` defined in
-the expression exercise, but generic: `Result<T, E>` where `T` is used in the
-`Ok` variant and `E` appears in the `Err` variant.
+operation, each with a different enum variant. It is generic: `Result<T, E>`
+where `T` is used in the `Ok` variant and `E` appears in the `Err` variant.
 
 ```rust,editable
 use std::fs::File;
@@ -41,6 +40,6 @@ fn main() {
   worth mentioning. It contains a lot of convenience methods and functions that
   help functional-style programming.
 - `Result` is the standard type to implement error handling as we will see on
-  Day 3.
+  Day 4.
 
 </details>

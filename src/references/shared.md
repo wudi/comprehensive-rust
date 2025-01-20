@@ -1,12 +1,12 @@
 ---
-minutes: 10
+minutes: 7
 ---
 
 # Shared References
 
-A reference provides a way to access another value without taking responsibility
-for the value, and is also called "borrowing". Shared references are read-only,
-and the referenced data cannot change.
+A reference provides a way to access another value without taking ownership of
+the value, and is also called "borrowing". Shared references are read-only, and
+the referenced data cannot change.
 
 <!-- mdbook-xgettext: skip -->
 
@@ -25,18 +25,9 @@ A shared reference to a type `T` has type `&T`. A reference value is made with
 the `&` operator. The `*` operator "dereferences" a reference, yielding its
 value.
 
-Rust will statically forbid dangling references:
-
-<!-- mdbook-xgettext: skip -->
-
-```rust,editable,compile_fail
-fn x_axis(x: i32) -> &(i32, i32) {
-    let point = (x, 0);
-    return &point;
-}
-```
-
 <details>
+
+- References can never be null in Rust, so null checking is not necessary.
 
 - A reference is said to "borrow" the value it refers to, and this is a good
   model for students not familiar with pointers: code can use the reference to
@@ -52,7 +43,7 @@ fn x_axis(x: i32) -> &(i32, i32) {
   required.
 
 - Rust will auto-dereference in some cases, in particular when invoking methods
-  (try `r.count_ones()`). There is no need for an `->` operator like in C++.
+  (try `r.is_ascii()`). There is no need for an `->` operator like in C++.
 
 - In this example, `r` is mutable so that it can be reassigned (`r = &b`). Note
   that this re-binds `r`, so that it refers to something else. This is different

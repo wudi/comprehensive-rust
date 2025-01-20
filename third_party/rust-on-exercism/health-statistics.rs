@@ -6,7 +6,7 @@ pub struct User {
     name: String,
     age: u32,
     height: f32,
-    visit_count: usize,
+    visit_count: u32,
     last_blood_pressure: Option<(u32, u32)>,
 }
 
@@ -24,13 +24,7 @@ pub struct HealthReport<'a> {
 
 impl User {
     pub fn new(name: String, age: u32, height: f32) -> Self {
-        Self {
-            name,
-            age,
-            height,
-            visit_count: 0,
-            last_blood_pressure: None,
-        }
+        Self { name, age, height, visit_count: 0, last_blood_pressure: None }
     }
     // ANCHOR_END: setup
 
@@ -41,7 +35,7 @@ impl User {
         let bp = measurements.blood_pressure;
         let report = HealthReport {
             patient_name: &self.name,
-            visit_count: self.visit_count as u32,
+            visit_count: self.visit_count,
             height_change: measurements.height - self.height,
             blood_pressure_change: match self.last_blood_pressure {
                 Some(lbp) => {
@@ -68,20 +62,18 @@ fn main() {
 fn test_visit() {
     let mut bob = User::new(String::from("Bob"), 32, 155.2);
     assert_eq!(bob.visit_count, 0);
-    let report = bob.visit_doctor(Measurements {
-        height: 156.1,
-        blood_pressure: (120, 80),
-    });
+    let report =
+        bob.visit_doctor(Measurements { height: 156.1, blood_pressure: (120, 80) });
     assert_eq!(report.patient_name, "Bob");
     assert_eq!(report.visit_count, 1);
     assert_eq!(report.blood_pressure_change, None);
+    assert!((report.height_change - 0.9).abs() < 0.00001);
 
-    let report = bob.visit_doctor(Measurements {
-        height: 156.1,
-        blood_pressure: (115, 76),
-    });
+    let report =
+        bob.visit_doctor(Measurements { height: 156.1, blood_pressure: (115, 76) });
 
     assert_eq!(report.visit_count, 2);
     assert_eq!(report.blood_pressure_change, Some((-5, -4)));
+    assert_eq!(report.height_change, 0.0);
 }
 // ANCHOR_END: tests

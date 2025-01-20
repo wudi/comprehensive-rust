@@ -1,4 +1,6 @@
-# Glossary
+<!-- i18n:comment Please keep { #glossary } untranslated. -->
+
+# Glossary { #glossary }
 
 The following is a glossary which aims to give a short definition of many Rust
 terms. For translations, this also serves to connect the term back to the
@@ -22,22 +24,24 @@ h1#glossary ~ ul > li:first-line {
 }
 </style>
 
-<!--
-Translators: please add the English term in italic after your translated term.
-Also, please keep the hard line breaks to ensure a nice formatting.
--->
+<!-- i18n:comment Please add the English term in italic after your -->
+<!-- i18n:comment translated term. Also, please keep the hard line -->
+<!-- i18n:comment breaks to ensure a nice formatting. -->
 
 - allocate:\
-  Dynamic memory allocation on [the heap](memory-management/stack-vs-heap.md).
+  Dynamic memory allocation on [the heap](memory-management/review.md).
 - argument:\
   Information that is passed into a function or method.
+- associated type:\
+  A type associated with a specific trait. Useful for defining the relationship
+  between types.
 - Bare-metal Rust:\
   Low-level Rust development, often deployed to a system without an operating
   system. See [Bare-metal Rust](bare-metal.md).
 - block:\
-  See [Blocks](control-flow/blocks.md) and _scope_.
+  See [Blocks](control-flow-basics/blocks-and-scopes.md) and _scope_.
 - borrow:\
-  See [Borrowing](ownership/borrowing.md).
+  See [Borrowing](borrowing/shared.md).
 - borrow checker:\
   The part of the Rust compiler which checks that all borrows are valid.
 - brace:\
@@ -54,7 +58,7 @@ Also, please keep the hard line breaks to ensure a nice formatting.
 - concurrency:\
   The execution of multiple tasks or processes at the same time.
 - Concurrency in Rust:\
-  See [Concurrency in Rust](concurrency.md).
+  See [Concurrency in Rust](concurrency/welcome.md).
 - constant:\
   A value that does not change during the execution of a program.
 - control flow:\
@@ -142,7 +146,7 @@ Also, please keep the hard line breaks to ensure a nice formatting.
   A systems programming language that focuses on safety, performance, and
   concurrency.
 - Rust Fundamentals:\
-  Days 1 to 3 of this course.
+  Days 1 to 4 of this course.
 - Rust in Android:\
   See [Rust in Android](android.md).
 - Rust in Chromium:\
@@ -158,8 +162,8 @@ Also, please keep the hard line breaks to ensure a nice formatting.
   A keyword in Rust used to define static variables or items with a `'static`
   lifetime.
 - string:\
-  A data type storing textual data. See
-  [`String` vs `str`](basic-syntax/string-slices.html) for more.
+  A data type storing textual data. See [Strings](references/strings.html) for
+  more.
 - struct:\
   A composite data type in Rust that groups together variables of different
   types under a single name.
@@ -198,6 +202,6 @@ Also, please keep the hard line breaks to ensure a nice formatting.
   Type that holds no data, written as a tuple with no members.
 - unsafe:\
   The subset of Rust which allows you to trigger _undefined behavior_. See
-  [Unsafe Rust](unsafe.html).
+  [Unsafe Rust](unsafe-rust/unsafe.md).
 - variable:\
   A memory location storing data. Variables are valid in a _scope_.

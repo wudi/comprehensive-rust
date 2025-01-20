@@ -1,5 +1,5 @@
 ---
-minutes: 5
+minutes: 3
 ---
 
 # Deriving
@@ -20,7 +20,7 @@ fn main() {
     let mut p2 = p1.clone(); // Clone trait adds `clone` method.
     p2.name = String::from("EldurScrollz");
     // Debug trait adds support for printing with `{:?}`.
-    println!("{:?} vs. {:?}", p1, p2);
+    println!("{p1:?} vs. {p2:?}");
 }
 ```
 
@@ -30,4 +30,4 @@ Derivation is implemented with macros, and many crates provide useful derive
 macros to add useful functionality. For example, `serde` can derive
 serialization support for a struct using `#[derive(Serialize)]`.
 
-</detail>
+</details>

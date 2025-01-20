@@ -4,22 +4,9 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 
-[[example]]
-name = "googletest-example"
-crate-type = ["staticlib"]
-path = "googletest.rs"
-test = true
-
-[[example]]
-name = "mockall-example"
-crate-type = ["staticlib"]
-path = "mockall.rs"
-test = true
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(never)'] }
 
 [[bin]]
 name = "luhn"
 path = "exercise.rs"
-
-[dependencies]
-googletest = "0.10.0"
-mockall = "0.12.1"

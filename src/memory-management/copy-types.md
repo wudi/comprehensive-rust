@@ -2,10 +2,6 @@
 minutes: 5
 ---
 
-<!-- NOTES:
-Present Copy as added functionality on top of the default move semantics: with Copy, the old value does not become invalid; Can derive Copy for a type if it implements Clone
--->
-
 # Copy Types
 
 While move semantics are the default, certain types are copied by default:
@@ -60,5 +56,12 @@ In the above example, try the following:
 - Remove `Copy` from the `derive` attribute. The compiler error is now in the
   `println!` for `p1`.
 - Show that it works if you clone `p1` instead.
+
+# More to Explore
+
+- Shared references are `Copy`/`Clone`, mutable references are not. This is
+  because Rust requires that mutable references be exclusive, so while it's
+  valid to make a copy of a shared reference, creating a copy of a mutable
+  reference would violate Rust's borrowing rules.
 
 </details>

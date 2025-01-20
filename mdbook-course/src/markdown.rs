@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+use std::fmt;
 use std::path::Path;
 
 /// Given a source_path for the markdown file being rendered and a source_path
@@ -54,6 +55,46 @@ pub fn duration(mut minutes: u64) -> String {
         (1, m) => format!("1 hour and {m} minutes"),
         (h, 0) => format!("{h} hours"),
         (h, m) => format!("{h} hours and {m} minutes"),
+    }
+}
+
+/// Table implements Display to format a two-dimensional table as markdown,
+/// following https://github.github.com/gfm/#tables-extension-.
+pub struct Table<const N: usize> {
+    header: [String; N],
+    rows: Vec<[String; N]>,
+}
+
+impl<const N: usize> Table<N> {
+    pub fn new(header: [String; N]) -> Self {
+        Self { header, rows: Vec::new() }
+    }
+
+    pub fn add_row(&mut self, row: [String; N]) {
+        self.rows.push(row);
+    }
+
+    fn write_row<'a, I: Iterator<Item = &'a str>>(
+        &self,
+        f: &mut fmt::Formatter<'_>,
+        iter: I,
+    ) -> fmt::Result {
+        write!(f, "|")?;
+        for cell in iter {
+            write!(f, " {} |", cell)?;
+        }
+        write!(f, "\n")
+    }
+}
+
+impl<const N: usize> fmt::Display for Table<N> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        self.write_row(f, self.header.iter().map(|s| s.as_str()))?;
+        self.write_row(f, self.header.iter().map(|_| "-"))?;
+        for row in &self.rows {
+            self.write_row(f, row.iter().map(|s| s.as_str()))?;
+        }
+        Ok(())
     }
 }
 
@@ -115,41 +156,52 @@ mod test {
 
     #[test]
     fn duration_no_time() {
-        assert_eq!(duration(0), "0 minutes")
+        assert_eq!(duration(0), "0 minutes");
     }
 
     #[test]
     fn duration_single_minute() {
-        assert_eq!(duration(1), "1 minute")
+        assert_eq!(duration(1), "1 minute");
     }
 
     #[test]
     fn duration_two_minutes() {
-        assert_eq!(duration(2), "2 minutes")
+        assert_eq!(duration(2), "2 minutes");
     }
 
     #[test]
     fn duration_seven_minutes() {
-        assert_eq!(duration(7), "10 minutes")
+        assert_eq!(duration(7), "10 minutes");
     }
 
     #[test]
     fn duration_hour() {
-        assert_eq!(duration(60), "1 hour")
+        assert_eq!(duration(60), "1 hour");
     }
 
     #[test]
     fn duration_hour_mins() {
-        assert_eq!(duration(61), "1 hour and 5 minutes")
+        assert_eq!(duration(61), "1 hour and 5 minutes");
     }
 
     #[test]
     fn duration_hours() {
-        assert_eq!(duration(120), "2 hours")
+        assert_eq!(duration(120), "2 hours");
     }
 
     #[test]
     fn duration_hours_mins() {
-        assert_eq!(duration(130), "2 hours and 10 minutes")
+        assert_eq!(duration(130), "2 hours and 10 minutes");
+    }
+
+    #[test]
+    fn table() {
+        let mut table = Table::new(["a".into(), "b".into()]);
+        table.add_row(["a1".into(), "b1".into()]);
+        table.add_row(["a2".into(), "b2".into()]);
+        assert_eq!(
+            format!("{}", table),
+            "| a | b |\n| - | - |\n| a1 | b1 |\n| a2 | b2 |\n"
+        );
     }
 }
